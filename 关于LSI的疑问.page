@@ -1,0 +1,5 @@
+$$A = TSD^T$$
+
+$$T^T T = I_r \quad D^T D = I_r$$
+
+$$S_{1,1} \geq S_{2,2} \geq \ldots \geq  S_{r,r} > 0 \quad S_{i,j} = 0 \; \text{where} \; i \neq j$$
