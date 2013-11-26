@@ -7,3 +7,7 @@ $$A = T \Lambda D^T$$
 $$T^T T = I_r \quad D^T D = I_r$$
 
 $$\Lambda ＝ diag( \lambda_1, ..., \lambda_r )$$
+
+我的问题是：
+* 为什么 SVD 作为一种 PCA 手段，它能捕捉到主要方向？
+* 有什么方法能够确定降维到的合适维度？
