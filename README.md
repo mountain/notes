@@ -1,4 +1,4 @@
 notes
 =====
 
-personal learning notes driven by gitit
+personal learning notes driven by pico
