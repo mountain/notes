@@ -3,17 +3,18 @@ ACM SIGPLAN History of Programming Languages Conference (HOPL-III)上的論文
 A History of Haskell: being lazy with class，因為原文較長，我將陸續翻譯過來。
 
 Haskell史傳：帶類的惰性語言
+-------------------------
 
 二○○七年一月二十五日
 
 Paul Hudak（耶魯大學）、John Hughes（查爾默斯大學）、Simon Peyton Jones（微軟研究院）、
 Philip Wadler（愛丁堡大學）
 
-摘要
+#### 摘要
 
 本論文描述了Haskell語言的歷史，包括了它的創始和原則、技術貢獻、實現與工具和應用與影響。
 
-1. 介紹
+#### 1. 介紹
 
 “1987年9月，在俄勒岡的波特蘭召開的函數式語言與計算機體系結構大會
 （the conference on Functional Programming Languages and Computer Architecture）
@@ -57,11 +58,9 @@ Philip Wadler（愛丁堡大學）
 我們無法期望公平的對待所有它們，但我們借此機會向所有作出貢獻的人致敬，
 Haskell如今已化為一匹野馬。
 
-第一部分
+### 第一部分 創始與原則
 
-創始與原則
-
-2. Haskell的創始
+#### 2. Haskell的創始
 
 1978年John Backus發表了他的Turing獎演講—
 “程序設計能從von Neumann風格中獲得解放嗎？”（Backus, 1978a）。該文對整個程序設計業界
@@ -93,7 +92,7 @@ Milner為ML發明的多態類型系統將被證明是特別有影響的（Milner
 。Scheme和ML都是嚴格的（傳值的，callby-value）語言，盡管它們都包含命令式的（imperative）
 特征，它們對提升函數式程序設計風格的貢獻頗多，特別是在高階函數的使用上。
 
-2.1 惰性的呼喚
+##### 2.1 惰性的呼喚
 
 接著在70年代晚期和80年代早期，新事物出現了。一系列獨創性的出版物引起人們爆炸般的興趣—把惰性
 （非嚴格的，或call-by-need）函數式語言作為一種書寫嚴肅程序工具的興趣。
@@ -116,12 +115,12 @@ SASL（St Andrews Static Language）（Turner, 1976），該語言最初在1972�
 
 與此同時，人們也息息相關的致力於以令人激動的新方式實現惰性語言。
 
-# 在軟件方面，一些基于圖規約（graph reduction）的不同技術得到了探索，特別是Turner，
+* 在軟件方面，一些基于圖規約（graph reduction）的不同技術得到了探索，特別是Turner，
 他頗有靈感的、優美的使用了SK組合子（SK combinators）（Turner, 1979b; Turner, 1979a）。
 （Turne的工作基于Haskell Curry的組合子演算（combinatory calculus）
 （Curry和Feys, 1958），該演算是Alonzo Church的lambda演算（Church, 1941）的一種
 無變量版本。）
-# 另外一個強有力的因素是這樣一種可能性，所有這些將導致一種激進的非von Neumann的硬件體系
+* 另外一個強有力的因素是這樣一種可能性，所有這些將導致一種激進的非von Neumann的硬件體系
 結構。幾個建造不同類型數據流機或者圖規約機（graph reduction machines）的認真計劃正在
 進行（或將進行），它們包括MIT的Id計劃（Arvind和Nikhil, 1987），Utah的Rediflow計劃
 （Keller et al., 1979），劍橋的SK組合子機SKIM（Stoye et al.,1984），
@@ -182,7 +181,7 @@ Steele檢查Scheme中的惰性求值，并且有段時間他們在權衡，在Sc
 原有的按值調用的設計方案。不論我們如何看待這個论证，假如他們做了相反的決定，我們唯一能作的
 推想就是，現今的學術性程序設計語言將會多么的不同呀！”）
 
-2.2 巴別之塔
+##### 2.2 巴別之塔
 
 作為所有上述活動的結果，在1980年代中期，一些研究者，包括作者們，對純的惰性語言的設計與實現
 有著熱切的興趣。實際上，我們中的相當多的人都獨立設計了自己的惰性語言，并忙于建造自己的實現。
@@ -230,7 +229,7 @@ OL的影響。Bird和 Wadler共同撰寫了一部關于函數式編程的有影�
 Boxy types: type inference for higher-rank types and impredicativity
 和Practical type inference for arbitrary-rank types。
 
-2.3 Haskell的誕生
+##### 2.3 Haskell的誕生
 
 到1987年，境況頗類似于一瓶過冷（super-cooled）的溶液—所有所需要的僅僅是一個隨機事件來促成
 結晶過程的發生。這個事件就發生在 87年的秋天，在Peyton Jones前去俄勒岡Portland參加1987年
@@ -263,7 +262,7 @@ Haskell仍然欠重恩于Miranda，既為了大體上的啟示，也為了特定
 “FPLang Committee”。直到我們命名了這個語言（2.4節），我們才開始稱呼自己為
 “Haskell委員會”。
 
-2.4 首輪會議
+##### 2.4 首輪會議
 
 Yale會議
 
@@ -343,7 +342,7 @@ IFIP WG2.8會議
 
 圖略。
 
-2.5 細化設計
+##### 2.5 細化設計
 
 最初慌忙的面對面會議之后，是十五年詳細的語言設計和開發，這些活動完全通過電子郵件來協作。
 下面是Haskell如何發展的簡要時間線索：
@@ -421,7 +420,7 @@ o 通過幾種方式擴展了代數數據類型：新類型（newtypes）、嚴�
 
 圖略
 
-2.6 Haskell是個玩笑？
+##### 2.6 Haskell是個玩笑？
 
 Haskell報告的首個版本發表在1990年4月1日。它出現在愚人節主要還是一個意外—一個不得不選擇的
 日期，并且版本發布足夠接近於4月1日使使用該日期獲得了充足的理由。
